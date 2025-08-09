@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世纪云行 商业计划书</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: white;
+            padding: 60px;
+            display: none;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+        }
+
+        .slide h1 {
+            font-size: 3em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide h2 {
+            font-size: 2.2em;
+            color: #34495e;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+            padding-left: 20px;
+        }
+
+        .slide h3 {
+            font-size: 1.5em;
+            color: #2980b9;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        .slide p, .slide li {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .slide ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255,255,255,0.9);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .two-column {
+            display: flex;
+            gap: 40px;
+            flex: 1;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .financial-table th, .financial-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .financial-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: bold;
+        }
+
+        .financial-table tr:nth-child(even) {
+            background-color: #f8f9ff;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 4em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .risk-item {
+            background: #fff5f5;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .opportunity-item {
+            background: #f0fff4;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">15</span>
+        </div>
+
+        <!-- 第1张：封面 -->
+        <div class="slide active">
+            <div class="logo-section">
+                <div class="logo">世纪云行</div>
+                <div class="logo" style="font-size: 2em; margin-top: -20px;">SkyTrail Century</div>
+                <div class="tagline">重新定义北美旅游市场</div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <h2>商业计划书</h2>
+                <div class="highlight-box" style="max-width: 600px; margin: 40px auto;">
+                    <h3>融资目标：30-40万加币</h3>
+                    <p>用于启动革命性的2.0网络推广模式，打造北美领先的智能化旅游服务平台</p>
+                </div>
+                <p style="margin-top: 40px; font-size: 1.2em; color: #7f8c8d;">
+                    2025年8月 | 加拿大多伦多
+                </p>
+            </div>
+        </div>
+
+        <!-- 第2张：执行摘要 -->
+        <div class="slide">
+            <h2>执行摘要</h2>
+            <div class="two-column">
+                <div class="column">
+                    <div class="highlight-box">
+                        <h3>🎯 商业机会</h3>
+                        <p>北美旅游市场规模超过2000亿美金，但传统旅行社面临获客成本高、客户流失严重、数字化程度低等痛点。</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>🚀 创新解决方案</h3>
+                        <p>采用2.0网络推广模式，以"产品社交"为核心，通过TikTok等社媒平台实现销售前置，降低获客成本80%以上。</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="highlight-box">
+                        <h3>💼 团队优势</h3>
+                        <p>创始团队拥有年销售额5000万美金旅游公司管理经验，具备完整的技术开发和运营能力。</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>💰 财务预期</h3>
+                        <p>预计1年内实现收支平衡，2年后年盈利50-100万美金，投资回报率超过300%。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第3张：市场分析 -->
+        <div class="slide">
+            <h2>市场分析</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>📊 市场规模与增长</h3>
+                    <ul>
+                        <li><strong>北美旅游市场</strong>：2024年约2100亿美金</li>
+                        <li><strong>跨境游市场</strong>：年增长率12-15%</li>
+                        <li><strong>华人旅游市场</strong>：约180亿美金，高消费群体</li>
+                        <li><strong>移动端预订</strong>：占比已超65%且持续增长</li>
+                    </ul>
+
+                    <h3>🔍 目标客户画像</h3>
+                    <ul>
+                        <li><strong>主要群体</strong>：25-55岁中高收入家庭</li>
+                        <li><strong>消费特点</strong>：年旅游支出8000-15000美金</li>
+                        <li><strong>语言偏好</strong>：中文、英文、法文用户</li>
+                        <li><strong>行为特征</strong>：重视性价比，依赖社交推荐</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>📈 市场趋势</h3>
+                    <div class="opportunity-item">
+                        <strong>社交电商爆发</strong><br>
+                        TikTok、Instagram等平台用户购买力强，转化率高
+                    </div>
+                    <div class="opportunity-item">
+                        <strong>中国游复苏</strong><br>
+                        2024年中美航班恢复，赴华旅游需求激增
+                    </div>
+                    <div class="opportunity-item">
+                        <strong>定制游增长</strong><br>
+                        个性化、高品质旅游需求年增长25%
+                    </div>
+                    <div class="opportunity-item">
+                        <strong>技术驱动</strong><br>
+                        AI客服、智能推荐显著提升用户体验
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第4张：传统旅游行业痛点 -->
+        <div class="slide">
+            <h2>传统旅游行业痛点</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>🎯 获客成本居高不下</h3>
+                    <ul>
+                        <li>Google竞价排名成本年增15-20%</li>
+                        <li>传统媒体广告ROI持续下降</li>
+                        <li>单个客户获取成本达150-300美金</li>
+                        <li>线下门店租金及人力成本高昂</li>
+                    </ul>
+
+                    <h3>📉 客户留存率低</h3>
+                    <ul>
+                        <li>行业平均复购率仅25%</li>
+                        <li>缺乏有效的客户关系管理</li>
+                        <li>价格透明度导致客户流失</li>
+                        <li>服务标准化程度不足</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>⚡ 运营效率低下</h3>
+                    <ul>
+                        <li>大量人工处理订单和客服</li>
+                        <li>缺乏数据驱动的决策支持</li>
+                        <li>多渠道管理困难</li>
+                        <li>库存和资源配置不优化</li>
+                    </ul>
+
+                    <h3>🔄 商业模式固化</h3>
+                    <ul>
+                        <li>依赖传统分销渠道</li>
+                        <li>产品同质化严重</li>
+                        <li>缺乏差异化竞争优势</li>
+                        <li>对新兴营销方式适应性差</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第5张：世纪云行解决方案 -->
+        <div class="slide">
+            <h2>世纪云行创新解决方案</h2>
+            <div class="highlight-box">
+                <h3>🌟 2.0网络推广模式</h3>
+                <p>从传统的"广告曝光"转向"产品社交"，实现销售前置</p>
+            </div>
+            <div class="two-column">
+                <div class="column">
+                    <h3>📱 社交媒体营销矩阵</h3>
+                    <ul>
+                        <li><strong>TikTok爆款策略</strong>："1000美金全家三亚别墅月租"等话题性产品</li>
+                        <li><strong>Instagram视觉营销</strong>：高质量旅游内容吸引目标客户</li>
+                        <li><strong>多平台联动</strong>：Facebook、YouTube、小红书全覆盖</li>
+                        <li><strong>KOL合作网络</strong>：与旅游达人建立深度合作</li>
+                    </ul>
+
+                    <h3>🔄 裂变营销体系</h3>
+                    <ul>
+                        <li><strong>客户分层运营</strong>：满意客户(80%)、小钱客户(40%)、热情客户(20%)、热钱客户(5%)</li>
+                        <li><strong>多元激励机制</strong>：积分、返现、奖励、分佣、合伙人分成</li>
+                        <li><strong>社交分享工具</strong>：一键分享、专属链接、实时追踪</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>🤖 技术驱动运营</h3>
+                    <ul>
+                        <li><strong>AI智能客服</strong>：24/7多语言服务，降低人力成本70%</li>
+                        <li><strong>数据BI分析</strong>：客户行为分析，精准营销推荐</li>
+                        <li><strong>自动化工具</strong>：内容生成、账号管理、订单处理</li>
+                        <li><strong>轻量微服务</strong>：海量前端+电商中台+业务后台</li>
+                    </ul>
+
+                    <h3>🎯 产品策略创新</h3>
+                    <ul>
+                        <li><strong>爆款产品</strong>：极高性价比获取话题流量</li>
+                        <li><strong>特需产品</strong>：激发用户主动分享</li>
+                        <li><strong>利润产品</strong>：通过客服二次转化提升利润</li>
+                        <li><strong>定制服务</strong>：满足个性化高端需求</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第6张：产品与服务 -->
+        <div class="slide">
+            <h2>产品与服务组合</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>🌏 核心产品线</h3>
+                    <div class="highlight-box">
+                        <strong>1. 精品团队游</strong><br>
+                        • 中国及东南亚深度游<br>
+                        • 非洲探险游<br>
+                        • 南美文化体验游<br>
+                        • 小团定制（8-15人）
+                    </div>
+                    <div class="highlight-box">
+                        <strong>2. 自由行定制</strong><br>
+                        • 全球机票酒店预订<br>
+                        • 精品民宿推荐<br>
+                        • 豪华邮轮服务<br>
+                        • 交通接送安排
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>✨ 特色增值服务</h3>
+                    <div class="highlight-box">
+                        <strong>3. 主题定制游</strong><br>
+                        • 医疗旅游（体检+度假）<br>
+                        • 教育游学（亲子+学习）<br>
+                        • 养生度假（温泉+SPA）<br>
+                        • 婚纱摄影（海外拍摄）
+                    </div>
+                    <div class="highlight-box">
+                        <strong>4. 增值服务</strong><br>
+                        • 签证代办服务<br>
+                        • 旅游保险推荐<br>
+                        • 当地导游服务<br>
+                        • 紧急救援支持
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px;">
+                <h3>💡 产品特色优势</h3>
+                <ul style="display: flex; flex-wrap: wrap; gap: 20px;">
+                    <li style="flex: 1; min-width: 200px;"><strong>高利润率</strong>：毛利率40-60%</li>
+                    <li style="flex: 1; min-width: 200px;"><strong>高复购率</strong>：通过优质服务实现50%+复购</li>
+                    <li style="flex: 1; min-width: 200px;"><strong>易复制</strong>：标准化产品可快速扩展</li>
+                    <li style="flex: 1; min-width: 200px;"><strong>易管控</strong>：全程数字化管理</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 第7张：竞争分析 -->
+        <div class="slide">
+            <h2>竞争对手分析</h2>
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th>竞争对手</th>
+                        <th>优势</th>
+                        <th>劣势</th>
+                        <th>我们的差异化</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Expedia/Booking</strong></td>
+                        <td>品牌知名度高<br>资源丰富</td>
+                        <td>缺乏个性化服务<br>社交营销能力弱</td>
+                        <td>专注华人市场<br>社交电商模式</td>
+                    </tr>
+                    <tr>
+                        <td><strong>携程海外</strong></td>
+                        <td>中文服务<br>技术实力强</td>
+                        <td>获客成本高<br>本土化不足</td>
+                        <td>本土化运营<br>裂变营销体系</td>
+                    </tr>
+                    <tr>
+                        <td><strong>本地旅行社</strong></td>
+                        <td>本地资源<br>服务灵活</td>
+                        <td>技术落后<br>营销方式陈旧</td>
+                        <td>技术驱动<br>数字化运营</td>
+                    </tr>
+                    <tr>
+                        <td><strong>新兴在线旅游</strong></td>
+                        <td>模式创新<br>用户体验好</td>
+                        <td>资源有限<br>品牌认知度低</td>
+                        <td>资源整合能力<br>成熟团队经验</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 30px;">
+                <h3>🏆 我们的核心竞争优势</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <ul>
+                            <li><strong>模式创新</strong>：首创2.0网络推广模式</li>
+                            <li><strong>获客成本</strong>：比传统方式低80%以上</li>
+                            <li><strong>客户粘性</strong>：裂变营销实现高复购</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <ul>
+                            <li><strong>技术优势</strong>：自主研发全套系统</li>
+                            <li><strong>团队经验</strong>：5000万美金业务管理经验</li>
+                            <li><strong>运营效率</strong>：AI+自动化大幅降本增效</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第8张：商业模式 -->
+        <div class="slide">
+            <h2>创新商业模式</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>📊 收入结构</h3>
+                    <div class="highlight-box">
+                        <strong>1. 产品销售收入 (70%)</strong><br>
+                        • 旅游产品直销<br>
+                        • 定制服务费用<br>
+                        • 增值服务收入
+                    </div>
+                    <div class="highlight-box">
+                        <strong>2. 平台佣金收入 (20%)</strong><br>
+                        • 合作伙伴分销佣金<br>
+                        • 第三方服务佣金<br>
+                        • 广告推广收入
+                    </div>
+                    <div class="highlight-box">
+                        <strong>3. 技术服务收入 (10%)</strong><br>
+                        • SaaS系统授权<br>
+                        • 技术开发服务<br>
+                        • 数据分析服务
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>🔄 业务流程创新</h3>
+                    <ol>
+                        <li><strong>社交获客</strong>：通过TikTok等平台发布爆款产品</li>
+                        <li><strong>AI客服</strong>：智能响应用户咨询，初步筛选需求</li>
+                        <li><strong>个性推荐</strong>：基于用户画像推荐合适产品</li>
+                        <li><strong>在线成交</strong>：简化支付流程，提高转化率</li>
+                        <li><strong>服务交付</strong>：标准化服务流程确保质量</li>
+                        <li><strong>客户维护</strong>：通过积分、返现等方式促进复购</li>
+                        <li><strong>裂变推广</strong>：满意客户成为品牌推广者</li>
+                    </ol>
+
+                    <div style="margin-top: 20px;">
+                        <h3>💎 核心价值主张</h3>
+                        <ul>
+                            <li><strong>客户</strong>：高性价比+个性化服务</li>
+                            <li><strong>合作伙伴</strong>：高佣金+营销支持</li>
+                            <li><strong>投资人</strong>：高增长+可持续盈利</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第9张：技术架构 -->
+        <div class="slide">
+            <h2>技术架构与创新</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>🏗️ 轻量微服务架构</h3>
+                    <div class="highlight-box">
+                        <strong>海量多前端</strong><br>
+                        • 支持无限数量站点<br>
+                        • 单页面应用优化<br>
+                        • 多语言多地区适配<br>
+                        • 响应式设计
+                    </div>
+                    <div class="highlight-box">
+                        <strong>电商服务中台</strong><br>
+                        • 统一订单管理<br>
+                        • 产品线集中管控<br>
+                        • 库存实时同步<br>
+                        • 支付网关集成
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="highlight-box">
+                        <strong>业务处理后台</strong><br>
+                        • 自动化资料处理<br>
+                        • 工作流程管理<br>
+                        • 客户关系管理<br>
+                        • 财务数据统计
+                    </div>
+                    <div class="highlight-box">
+                        <strong>数据BI分析</strong><br>
+                        • 客户行为分析<br>
+                        • 产品性能监控<br>
+                        • 营销效果追踪<br>
+                        • 预测性分析
+                    </div>
+                </div>
+            </div>
+            <h3>🤖 AI与自动化工具</h3>
+            <ul style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                <li><strong>AI客服系统</strong>：多语言支持，24/7服务</li>
+                <li><strong>内容生成工具</strong>：自动生成营销素材</li>
+                <li><strong>账号矩阵管理</strong>：批量运营社交媒体</li>
+                <li><strong>智能推荐引擎</strong>：个性化产品推荐</li>
+                <li><strong>价格优化算法</strong>：动态定价策略</li>
+                <li><strong>风险控制系统</strong>：订单安全监控</li>
+            </ul>
+        </div>
+
+        <!-- 第10张：团队介绍 -->
+        <div class="slide">
+            <h2>核心团队</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>👨‍💼 创始人 + 首席运营官 (35%股份)</h3>
+                    <div class="highlight-box">
+                        <strong>行业经验</strong><br>
+                        • 10年+旅游行业管理经验<br>
+                        • 曾任加拿大大型旅游公司核心管理层<br>
+                        • 年销售额5000万美金业务管理经验<br>
+                        • 深度了解北美多元文化市场需求
+                    </div>
+
+                    <h3>👨‍💻 创始人 + 产品技术官 (25%股份)</h3>
+                    <div class="highlight-box">
+                        <strong>技术实力</strong><br>
+                        • 18年软件开发经验（国内+加拿大）<br>
+                        • 成功开发年10万人次旅游管理ERP系统<br>
+                        • 精通ERP、BI、SaaS、AI、电商、VR/AR等技术<br>
+                        • 拥有完整的产品设计和技术架构能力
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>🏆 团队优势</h3>
+                    <ul>
+                        <li><strong>已验证商业模式</strong>：疫情前已有多个成功案例</li>
+                        <li><strong>完整业务经验</strong>：覆盖营销、销售、技术、运营全链条</li>
+                        <li><strong>本土化优势</strong>：深度理解北美市场和客户需求</li>
+                        <li><strong>技术自主性</strong>：核心系统完全自主研发</li>
+                        <li><strong>资源网络</strong>：拥有丰富的供应商和合作伙伴资源</li>
+                    </ul>
+
+                    <h3>🎯 团队扩展计划</h3>
+                    <div class="highlight-box">
+                        <strong>团队期权预留 (18%)</strong><br>
+                        • 市场营销专家<br>
+                        • 客户服务团队<br>
+                        • 技术开发人员<br>
+                        • 业务拓展经理
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第11张：财务预测 -->
+        <div class="slide">
+            <h2>财务预测与盈利模式</h2>
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th>财务指标</th>
+                        <th>Year 1</th>
+                        <th>Year 2</th>
+                        <th>Year 3</th>
+                        <th>Year 4</th>
+                        <th>Year 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>营业收入 (万美金)</strong></td>
+                        <td>15</td>
+                        <td>50</td>
+                        <td>120</td>
+                        <td>200</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td><strong>毛利率</strong></td>
+                        <td>35%</td>
+                        <td>45%</td>
+                        <td>50%</td>
+                        <td>52%</td>
+                        <td>55%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>运营成本 (万美金)</strong></td>
+                        <td>12</td>
+                        <td>18</td>
+                        <td>35</td>
+                        <td>55</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td><strong>净利润 (万美金)</strong></td>
+                        <td>-6.8</td>
+                        <td>4.5</td>
+                        <td>25</td>
+                        <td>49</td>
+                        <td>85</td>
+                    </tr>
+                    <tr>
+                        <td><strong>客户获取成本</strong></td>
+                        <td>$50</td>
+                        <td>$35</td>
+                        <td>$25</td>
+                        <td>$20</td>
+                        <td>$15</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="two-column" style="margin-top: 30px;">
+                <div class="column">
+                    <h3>📈 关键指标预测</h3>
+                    <ul>
+                        <li><strong>客户复购率</strong>：从30%提升至60%</li>
+                        <li><strong>客户生命周期价值</strong>：平均3000美金</li>
+                        <li><strong>月活跃用户</strong>：第2年达到10万+</li>
+                        <li><strong>社交媒体粉丝</strong>：100万+关注者</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>💰 盈利模式成熟化</h3>
+                    <ul>
+                        <li><strong>第1年</strong>：市场验证，实现收支平衡</li>
+                        <li><strong>第2年</strong>：规模扩张，开始盈利分红</li>
+                        <li><strong>第3-5年</strong>：快速增长，年净利润50-100万美金</li>
+                        <li><strong>退出策略</strong>：5年后估值5000万美金+</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第12张：发展计划 -->
+        <div class="slide">
+            <h2>发展阶段规划</h2>
+            <div class="two-column">
+                <div class="column">
+                    <div class="highlight-box">
+                        <h3>🚀 准备期 (3-4个月)</h3>
+                        <strong>主要任务：</strong><br>
+                        • 完成技术平台开发<br>
+                        • 建立供应商合作网络<br>
+                        • 组建核心运营团队<br>
+                        • 完成品牌包装与注册<br>
+                        <strong>资金需求：</strong>12万加币
+                    </div>
+                    <div class="highlight-box">
+                        <h3>⚡ 试运营期 (3-6个月)</h3>
+                        <strong>主要任务：</strong><br>
+                        • 启动社交媒体营销<br>
+                        • 推出首批爆款产品<br>
+                        • 验证商业模式可行性<br>
+                        • 积累首批种子客户<br>
+                        <strong>目标：</strong>1000名客户，50万营收
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="highlight-box">
+                        <h3>📈 发展期 (6-12个月)</h3>
+                        <strong>主要任务：</strong><br>
+                        • 大规模推广获客<br>
+                        • 完善产品线布局<br>
+                        • 建立裂变营销体系<br>
+                        • 实现盈亏平衡<br>
+                        <strong>目标：</strong>5000名客户，300万营收
+                    </div>
+                    <div class="highlight-box">
+                        <h3>🎯 规模期 (持续发展)</h3>
+                        <strong>主要任务：</strong><br>
+                        • 地域市场扩张<br>
+                        • 产品品类丰富<br>
+                        • 技术平台开放<br>
+                        • 准备下轮融资<br>
+                        <strong>目标：</strong>年营收1000万美金+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第13张：风险分析 -->
+        <div class="slide">
+            <h2>风险分析与应对策略</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>⚠️ 主要风险</h3>
+                    <div class="risk-item">
+                        <strong>市场竞争风险</strong><br>
+                        大型平台加大社交媒体投入，抢占市场份额
+                        <br><strong>应对：</strong>差异化定位，深耕垂直市场
+                    </div>
+                    <div class="risk-item">
+                        <strong>获客成本上升</strong><br>
+                        社交媒体广告成本持续上涨
+                        <br><strong>应对：</strong>建立自有流量池，降低平台依赖
+                    </div>
+                    <div class="risk-item">
+                        <strong>政策法规变化</strong><br>
+                        旅游、支付、数据等相关政策调整
+                        <br><strong>应对：</strong>密切关注政策动向，提前合规布局
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="risk-item">
+                        <strong>技术安全风险</strong><br>
+                        数据泄露、系统故障等技术问题
+                        <br><strong>应对：</strong>投入安全建设，建立备份机制
+                    </div>
+                    <div class="risk-item">
+                        <strong>供应链风险</strong><br>
+                        合作伙伴服务质量、价格波动
+                        <br><strong>应对：</strong>多元化供应商网络，建立质量标准
+                    </div>
+                    <div class="risk-item">
+                        <strong>经济周期风险</strong><br>
+                        经济下行影响旅游消费需求
+                        <br><strong>应对：</strong>产品结构调整，开发抗周期产品
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px;">
+                <h3>🛡️ 风险控制措施</h3>
+                <ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                    <li><strong>财务风险控制</strong>：严格成本管控，现金流管理</li>
+                    <li><strong>运营风险控制</strong>：建立标准化流程，质量监控体系</li>
+                    <li><strong>技术风险控制</strong>：多重备份，安全加密，定期审计</li>
+                    <li><strong>法律风险控制</strong>：聘请专业律师，合规运营</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 第14张：融资需求 -->
+        <div class="slide">
+            <h2>融资需求与使用计划</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>💰 融资基本信息</h3>
+                    <div class="highlight-box">
+                        <strong>融资金额：</strong>30-40万加币 (约22-29万美金)<br>
+                        <strong>公司估值：</strong>137万加币 (100万美金)<br>
+                        <strong>出让股份：</strong>22-29%<br>
+                        <strong>融资轮次：</strong>天使轮<br>
+                        <strong>资金到位：</strong>2025年9-10月
+                    </div>
+                    
+                    <h3>📊 资金使用计划</h3>
+                    <div style="background: #f8f9ff; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span><strong>技术开发</strong></span>
+                            <span><strong>40% (12万加币)</strong></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span><strong>人力成本</strong></span>
+                            <span><strong>30% (9万加币)</strong></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span><strong>市场推广</strong></span>
+                            <span><strong>30% (9万加币)</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>🎯 投资亮点</h3>
+                    <ul>
+                        <li><strong>已验证模式</strong>：团队有成功运营经验</li>
+                        <li><strong>巨大市场</strong>：北美旅游市场2000亿美金规模</li>
+                        <li><strong>创新技术</strong>：2.0网络推广模式领先行业</li>
+                        <li><strong>快速回报</strong>：预计2年内投资人可收回成本</li>
+                        <li><strong>退出机制</strong>：多元化退出策略，回报率300%+</li>
+                    </ul>
+
+                    <h3>📈 投资人收益预期</h3>
+                    <div class="highlight-box">
+                        <strong>短期收益 (1.5-2年)</strong><br>
+                        • 年度分红收益<br>
+                        • 公司回购50%股份选择权<br>
+                        • 预计年化回报率50%+
+                    </div>
+                    <div class="highlight-box">
+                        <strong>长期收益 (3-5年)</strong><br>
+                        • 股权价值增值<br>
+                        • 并购或IPO退出<br>
+                        • 预计总回报率300-500%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第15张：股权结构与治理 -->
+        <div class="slide">
+            <h2>股权结构与公司治理</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>📊 股权分配方案</h3>
+                    <table class="financial-table">
+                        <thead>
+                            <tr>
+                                <th>股东类型</th>
+                                <th>股份比例</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>投资人</strong></td>
+                                <td>22%</td>
+                                <td>天使轮投资者</td>
+                            </tr>
+                            <tr>
+                                <td><strong>创始人CEO+COO</strong></td>
+                                <td>35%</td>
+                                <td>业务运营负责</td>
+                            </tr>
+                            <tr>
+                                <td><strong>创始人CTO</strong></td>
+                                <td>25%</td>
+                                <td>技术产品负责</td>
+                            </tr>
+                            <tr>
+                                <td><strong>团队期权池</strong></td>
+                                <td>18%</td>
+                                <td>CEO代持，激励团队</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>⚖️ 公司治理架构</h3>
+                    <ul>
+                        <li><strong>董事会</strong>：3人（投资人1席，创始团队2席）</li>
+                        <li><strong>决策机制</strong>：重大事项需董事会2/3通过</li>
+                        <li><strong>一致行动人</strong>：创始团队保持控制权</li>
+                        <li><strong>股东权利</strong>：知情权、分红权、优先认购权</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>🎯 投资人权益保障</h3>
+                    <div class="highlight-box">
+                        <strong>财务监督权</strong><br>
+                        • 月度财务报告<br>
+                        • 年度审计报告<br>
+                        • 重大支出需投资人同意
+                    </div>
+                    <div class="highlight-box">
+                        <strong>业务监督权</strong><br>
+                        • 参与重大业务决策<br>
+                        • 监督发展计划执行<br>
+                        • 关键人员任免建议权
+                    </div>
+                    <div class="highlight-box">
+                        <strong>退出保障机制</strong><br>
+                        • 2年后公司回购选择权<br>
+                        • 优先股转换权<br>
+                        • 反稀释保护条款
+                    </div>
+
+                    <h3>📋 里程碑与对赌协议</h3>
+                    <ul>
+                        <li><strong>第6个月</strong>：月活用户达到5000人</li>
+                        <li><strong>第12个月</strong>：实现收支平衡</li>
+                        <li><strong>第18个月</strong>：月营收超过20万美金</li>
+                        <li><strong>第24个月</strong>：年净利润达到50万美金</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第16张：联系方式 -->
+        <div class="slide">
+            <div style="text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                <h1 style="margin-bottom: 40px;">谢谢观看</h1>
+                <div class="logo-section">
+                    <div class="logo">世纪云行 SkyTrail Century</div>
+                    <div class="tagline">重新定义北美旅游市场</div>
+                </div>
+                
+                <div style="margin-top: 60px;">
+                    <h2 style="color: #2c3e50; margin-bottom: 30px;">联系我们</h2>
+                    <div class="two-column" style="max-width: 800px; margin: 0 auto;">
+                        <div class="column">
+                            <div class="highlight-box">
+                                <h3>📧 商务合作</h3>
+                                <p>business@skytrailcentury.com</p>
+                            </div>
+                            <div class="highlight-box">
+                                <h3>💼 投资咨询</h3>
+                                <p>investment@skytrailcentury.com</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="highlight-box">
+                                <h3>📱 公司地址</h3>
+                                <p>加拿大安大略省<br>Richmond Hill, ON</p>
+                            </div>
+                            <div class="highlight-box">
+                                <h3>🌐 官方网站</h3>
+                                <p>www.skytrailcentury.com<br>(即将上线)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 40px; font-size: 1.2em; color: #7f8c8d;">
+                    期待与您携手，共创北美旅游市场新未来！
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">⬅️ 上一页</button>
+        <button class="nav-btn" onclick="nextSlide()">下一页 ➡️</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            document.getElementById('current-slide').textContent = index + 1;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // 键盘导航
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        // 点击导航
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('slide')) {
+                nextSlide();
+            }
+        });
+    </script>
+</body>
+</html>
